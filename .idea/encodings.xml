@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/layout/dialog_date_picker.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/layout/item_spinner__down_common.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_date_picker.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/item_spinner__down_common.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/xml/file_paths.xml" charset="UTF-8" />
+  </component>
+</project>

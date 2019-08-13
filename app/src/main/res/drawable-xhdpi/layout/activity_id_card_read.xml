@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/common_title"/>
+
+    <TextView
+        android:id="@+id/tv_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_large_16sp"
+        android:text="请将身份证靠近手机背后NFC读取处"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/textcolor"
+        android:layout_marginTop="120dp"/>
+    <TextView
+        android:id="@+id/tv_id_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_large_16sp"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"/>
+
+</LinearLayout>

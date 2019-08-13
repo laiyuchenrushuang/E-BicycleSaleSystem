@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_bg"
+    android:orientation="vertical">
+    <include layout="@layout/common_title"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/main_icon"/>
+      <RelativeLayout
+            android:id="@+id/rl_hgz_data"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/white_bg">
+
+          <ImageView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:src="@drawable/hgzcj_icon"
+              android:layout_centerVertical="true"
+              android:layout_marginStart="10dp"/>
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerInParent="true"
+              android:orientation="vertical">
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textSize="@dimen/text_super_18sp"
+                  android:layout_centerHorizontal="true"
+                  android:textColor="@color/black"
+                  android:text="@string/collect_hgz_data"/>
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textSize="12sp"
+                  android:layout_marginTop="12dp"
+                  android:textColor="@color/textcolor2"
+                  android:text="扫描合格证采集、拍照"/>
+
+          </LinearLayout>
+          <ImageView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:src="@drawable/next_orange"
+              android:layout_centerVertical="true"
+              android:layout_alignParentEnd="true"
+              android:layout_marginEnd="24dp"/>
+
+    </RelativeLayout>
+      <RelativeLayout
+            android:id="@+id/rl_collect_data"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/white_bg">
+
+          <ImageView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:src="@drawable/data_collect"
+              android:layout_centerVertical="true"
+              android:layout_marginStart="10dp"/>
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerInParent="true"
+              android:orientation="vertical">
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textSize="@dimen/text_super_18sp"
+                  android:layout_centerHorizontal="true"
+                  android:textColor="@color/black"
+                  android:text="@string/yu_deng_ji"/>
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textSize="12sp"
+                  android:layout_marginTop="12dp"
+                  android:textColor="@color/textcolor2"
+                  android:text="扫描合格证采集、数据查询"/>
+
+          </LinearLayout>
+          <ImageView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:src="@drawable/next_orange"
+              android:layout_centerVertical="true"
+              android:layout_alignParentEnd="true"
+              android:layout_marginEnd="24dp"/>
+
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_cyyy"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/item_white_bg">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/chayanyuyue"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_super_18sp"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/black"
+                    android:text="@string/cyyy"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:layout_marginTop="12dp"
+                    android:textColor="@color/textcolor2"
+                    android:text="快速预约、查看预约记录"/>
+
+            </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/next_orange"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="24dp"/>
+
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+    <include layout="@layout/common_title"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/car_msg_mark_success"/>
+    <TextView
+        android:id="@+id/tv_tips_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textcolor"
+        android:textSize="@dimen/text_normal_12sp"
+        android:layout_marginTop="12dp"
+        android:text="提交成功"/>
+    <Button
+        android:id="@+id/btn_ywdj"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/btn_orange_bg1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_large_16sp"
+        android:text="业务登记"/>
+    <Button
+        android:id="@+id/btn_back_home"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/btn_orange_bg2"
+        android:textColor="@color/text_style_2"
+        android:textSize="@dimen/text_large_16sp"
+        android:text="返回首页"/>
+
+</LinearLayout>

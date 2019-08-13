@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <TextView
+                style="@style/car_cy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="33dp"
+                android:text="车身类型:" />
+
+            <Spinner
+                android:id="@+id/clcy_cllx_sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></Spinner>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            android:background="@color/linecolor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <TextView
+                style="@style/car_cy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="33dp"
+                android:text="业务类型:" />
+
+            <Spinner
+                android:id="@+id/clcy_ywlx_sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></Spinner>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            android:background="@color/linecolor" />
+
+        <LinearLayout
+            android:id="@+id/clcy_yeyy_ll"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/car_cy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="33dp"
+                android:text="业务原因:" />
+
+            <Spinner
+                android:id="@+id/clcy_ywyy_sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></Spinner>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/clcy_yeyy_v"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            android:background="@color/linecolor"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <TextView
+                style="@style/car_cy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="33dp"
+                android:text="车身颜色：" />
+
+            <Spinner
+                android:id="@+id/clcy_csys1_sp"
+                style="@style/car_cy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:text="白"
+                android:textColor="@color/blue"
+                android:spinnerMode="dialog"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="/"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_super_20sp" />
+
+            <Spinner
+                android:id="@+id/clcy_csys2_sp"
+                style="@style/car_cy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:text="红"
+                android:textColor="@color/blue"
+                android:spinnerMode="dialog"/>
+
+            <android.support.v4.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="2" />
+
+            <ImageView
+                android:id="@+id/iv_csys"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="21dp"
+                android:background="@mipmap/check_bt_ok" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            android:background="@color/linecolor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <TextView
+                style="@style/car_cy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="33dp"
+                android:text="长×宽×高:\n(mm×mm×mm)  " />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="3">
+
+                <EditText
+                    android:id="@+id/ed_c"
+                    style="@style/car_cy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:digits="0123456789."
+                    android:text="39"
+                    android:textColor="@color/blue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:text="*"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/ed_k"
+                    style="@style/car_cy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:text="39"
+                    android:textColor="@color/blue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:text="*"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/ed_g"
+                    style="@style/car_cy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:text="39"
+                    android:textColor="@color/blue" />
+            </LinearLayout>
+
+            <android.support.v4.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iv_ckg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="21dp"
+                android:background="@mipmap/check_bt_ok" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            android:background="@color/linecolor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <TextView
+                style="@style/car_cy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="33dp"
+                android:text="实测质量：\n\t（Kg）  " />
+
+            <EditText
+                android:id="@+id/ed_sczl"
+                style="@style/car_cy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="3"
+                android:background="@null"
+                android:text="120"
+                android:textColor="@color/blue" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iv_sczl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="21dp"
+                android:background="@mipmap/check_bt_ok" />
+            <!--<TextView-->
+            <!--android:id="@+id/tv_sjzl"-->
+            <!--style="@style/car_cy_bt_ok"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_marginEnd="21dp"-->
+            <!--android:background="@drawable/clcy_button_sbt"-->
+            <!--android:gravity="left|center"-->
+            <!--android:text="@string/carcy_ok" />-->
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            android:background="@color/linecolor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <TextView
+                style="@style/car_cy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="33dp"
+                android:text="实际时速：\n（Km/h）  " />
+
+            <EditText
+                android:id="@+id/ed_sjss"
+                style="@style/car_cy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="3"
+                android:background="@null"
+                android:text="120"
+                android:textColor="@color/blue" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iv_sjss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="21dp"
+                android:background="@mipmap/check_bt_ok" />
+            <!--<TextView-->
+            <!--android:id="@+id/tv_sjss"-->
+            <!--style="@style/car_cy_bt_no"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_marginEnd="21dp"-->
+            <!--android:background="@drawable/clcy_button_sbt_no"-->
+            <!--android:gravity="center|right"-->
+            <!--android:text="@string/carcy_no" />-->
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            android:background="@color/linecolor" />
+
+        <TextView
+            style="@style/car_cy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="17dp"
+            android:text="不合格原因：" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="22dp"
+            android:background="@drawable/carcy_edit_reson">
+
+            <EditText
+                android:id="@+id/ed_bhgyy"
+                style="@style/car_cy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="请在这里输入" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/clcy_next"
+            style="@style/system_login_next"
+            android:layout_width="290dp"
+            android:layout_height="42dp"
+            android:background="@drawable/system_login_next"
+            android:gravity="center"
+            android:text="@string/carcy_next" />
+    </LinearLayout>
+
+</LinearLayout>

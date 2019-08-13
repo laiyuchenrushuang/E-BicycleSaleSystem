@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.seatrend.cd.electricbicyclesalesystem.activity.CollectDataActivity"
+    android:orientation="vertical">
+    <include layout="@layout/common_title"/>
+    <RadioGroup
+        android:id="@+id/m_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/rb_ywxx"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:textColor="@color/text_style_1"
+            android:gravity="center"
+            android:textSize="@dimen/text_normal_14sp"
+            android:text="1.业务信息"/>
+        <RadioButton
+            android:id="@+id/rb_syrxx"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:textColor="@color/text_style_1"
+            android:gravity="center"
+            android:textSize="@dimen/text_normal_14sp"
+            android:text="2.所有人信息"/>
+        <RadioButton
+            android:id="@+id/rb_dlrxx"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:textColor="@color/text_style_1"
+            android:gravity="center"
+            android:textSize="@dimen/text_normal_14sp"
+            android:text="3.代理人信息"/>
+    </RadioGroup>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp">
+        <View
+            android:id="@+id/view1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/view_bg"
+            android:layout_weight="1"/>
+        <View
+            android:id="@+id/view2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/view_bg"
+            android:layout_weight="1"/>
+        <View
+            android:id="@+id/view3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/view_bg"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </FrameLayout>
+
+
+</LinearLayout>

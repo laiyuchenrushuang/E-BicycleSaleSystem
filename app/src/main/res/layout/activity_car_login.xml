@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_bg"
+    android:orientation="vertical">
+    <include layout="@layout/common_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="24dp"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_normal_14sp"
+            android:textColor="@color/textcolor3"
+            android:lineSpacingExtra="4dp"
+            android:text="您好！\n您可以通过以下两种方式来查询车辆信息"/>
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/peitu"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_style_bg1"
+        android:layout_margin="12dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_large_16sp"
+                android:background="@drawable/bule_bg1"
+                android:gravity="center"
+                android:text="1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/theme_color"
+                android:textSize="@dimen/text_large_16sp"
+                android:layout_marginStart="6dp"
+                android:text="通过扫描22位条码号登记"/>
+        </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/btn_scan_bm"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/btn_orange_bg1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/scan_white_icon"
+                    android:layout_marginEnd="12dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_super_18sp"
+                    android:text="扫描22位条码号"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_style_bg1"
+        android:layout_margin="12dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_large_16sp"
+                android:background="@drawable/bule_bg1"
+                android:gravity="center"
+                android:text="2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/theme_color"
+                android:textSize="@dimen/text_large_16sp"
+                android:layout_marginStart="6dp"
+                android:text="通过整车编码登记"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center_vertical">
+            <EditText
+                android:id="@+id/et_bm"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="42dp"
+                android:layout_marginStart="24dp"
+                android:background="@drawable/edit_text_bg"
+                android:digits="@string/number_and_letter"
+                android:paddingStart="10dp"
+                android:textSize="@dimen/text_normal_14sp"
+                android:hint="请输入整车编码"
+                style="@style/editTextStyle"/>
+            <RelativeLayout
+                android:id="@+id/btn_query"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="24dp"
+                android:background="@color/orange">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/search_icon"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
