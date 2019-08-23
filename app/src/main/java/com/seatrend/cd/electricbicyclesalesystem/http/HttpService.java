@@ -747,8 +747,9 @@ public class HttpService {
      * @param url
      * @param jsonStr
      * @param file
-     * @param map
-     * @param module  混合数据的post接口
+     * @param map     
+     * @param module  
+     * 混合数据的post接口，重要api  -> MultipartBody
      */
     public void postMutipartData(final String url, String jsonStr, File file, Map<String, String> map, BaseModule module) {
         this.mBaseModule = module;
@@ -765,7 +766,6 @@ public class HttpService {
 
                 for (Map.Entry<String, String> entry : map.entrySet()) {
                     builder.addFormDataPart(entry.getKey().trim(), entry.getValue().trim());
-
                 }
             }
             MediaType mjson = MediaType.parse("application/json; charset=utf-8");
@@ -788,8 +788,16 @@ public class HttpService {
             return;
         }
 
-        mOkHttpClient.newCall(request).enqueue(new Callback() {
-            @Override
+        mOkHttpClient.newCall(request).enqueue(new HttpCallback(url));
+    }
+
+    private class HttpCallback implements Callback {
+        private String url;
+        public HttpCallback(String url) {
+            this.url = url;
+        }
+
+        @Override
             public void onFailure(Call call, IOException e) {
                 Message message = Message.obtain();
                 message.what = FAILED_CODE;
@@ -845,7 +853,5 @@ public class HttpService {
                 }
                 mHandler.sendMessage(message);
             }
-        });
-    }
-
+        }
 }
