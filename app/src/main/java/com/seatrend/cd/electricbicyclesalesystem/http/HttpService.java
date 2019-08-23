@@ -742,5 +742,110 @@ public class HttpService {
         }).start();
 
     }
+    
+     /**
+     * @param url
+     * @param jsonStr
+     * @param file
+     * @param map
+     * @param module  混合数据的post接口
+     */
+    public void postMutipartData(final String url, String jsonStr, File file, Map<String, String> map, BaseModule module) {
+        this.mBaseModule = module;
+        String baseUrl = "http://" + SharedPreferencesUtils.getIpAddress() + ":" + SharedPreferencesUtils.getPort();
+        final String finalUrl = baseUrl + url;
+        Request request = null;
+        try {
+            MultipartBody.Builder builder = new MultipartBody.Builder();
+            builder.setType(MultipartBody.FORM);
+
+            if (file.exists()) {
+                RequestBody requestBody = RequestBody.create(MediaType.parse("application/octet-stream"), file);
+                builder.addFormDataPart("file", file.getName(), requestBody);
+
+                for (Map.Entry<String, String> entry : map.entrySet()) {
+                    builder.addFormDataPart(entry.getKey().trim(), entry.getValue().trim());
+
+                }
+            }
+            MediaType mjson = MediaType.parse("application/json; charset=utf-8");
+            RequestBody jsBody = RequestBody.create(mjson, jsonStr);
+            builder.addPart(jsBody);
+
+            request = new Request.Builder()
+                    .url(finalUrl)
+                    .post(builder.build())
+                    .addHeader(Constants.Companion.getQAUTH(), UserInfo.TOKEN)
+                    .build();
+        } catch (Exception e) {
+            Message message = Message.obtain();
+            message.what = FAILED_CODE;
+            CommonResponse commonResponse = new CommonResponse();
+            commonResponse.setUrl(url);
+            commonResponse.setResponseString(e.getMessage());
+            message.obj = commonResponse;
+            mHandler.sendMessage(message);
+            return;
+        }
+
+        mOkHttpClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Message message = Message.obtain();
+                message.what = FAILED_CODE;
+                CommonResponse commonResponse = new CommonResponse();
+                commonResponse.setUrl(url);
+                commonResponse.setResponseString(e.getMessage());
+                message.obj = commonResponse;
+                mHandler.sendMessage(message);
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Message message = Message.obtain();
+                String resp = response.body().string();
+                if (TextUtils.isEmpty(resp)) {
+                    message.what = FAILED_CODE;
+                    CommonResponse commonResponse = new CommonResponse();
+                    commonResponse.setUrl(url);
+                    commonResponse.setResponseString("服务器响应内容为空");
+                    message.obj = commonResponse;
+                    mHandler.sendMessage(message);
+                    return;
+                }
+                try {
+                    BaseEntity baseEntity = GsonUtils.gson(resp, BaseEntity.class);
+                    //虽然响应成功，有可能数据不对
+                    boolean status = baseEntity.getStatus();
+                    int code = baseEntity.getCode();
+                    if (status && code == 0) {
+                        message.what = SUCCESS_CODE;
+                    } else {
+                        message.what = FAILED_CODE;
+                    }
+                    CommonResponse commonResponse = new CommonResponse();
+                    commonResponse.setUrl(url);
+                    commonResponse.setResponseString(resp);
+                    message.obj = commonResponse;
+                } catch (JsonSyntaxException e) {
+                    try {
+                        ErrorEntity errorEntity = GsonUtils.gson(resp, ErrorEntity.class);
+                        message.what = FAILED_CODE;
+                        CommonResponse commonResponse = new CommonResponse();
+                        commonResponse.setUrl(url);
+                        commonResponse.setResponseString("JsonSyntaxException " + errorEntity.toString());
+                        message.obj = commonResponse;
+                    } catch (JsonSyntaxException e1) {
+                        message.what = FAILED_CODE;
+                        CommonResponse commonResponse = new CommonResponse();
+                        commonResponse.setUrl(url);
+                        commonResponse.setResponseString("JsonSyntaxException" + e1.getMessage());
+                        message.obj = commonResponse;
+                    }
+                }
+                mHandler.sendMessage(message);
+            }
+        });
+    }
 
 }
